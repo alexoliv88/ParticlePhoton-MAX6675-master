@@ -1,0 +1,7 @@
+{
+  "name": "Adafruit_MAX6675",
+  "author": "Adafruit, Technobly",
+  "license": "BSD",
+  "version": "0.0.2",
+  "description": "Adafruit MAX6675 Library ported to Particle Photon."
+}
