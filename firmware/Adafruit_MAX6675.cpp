@@ -19,10 +19,10 @@
 
 
 
-Adafruit_MAX6675::Adafruit_MAX6675(int8_t SCLK, int8_t CS, int8_t MISO) {
-  sclk = SCLK;
-  cs = CS;
-  miso = MISO;
+Adafruit_MAX6675::Adafruit_MAX6675(int8_t sclk_pin, int8_t cs_pin, int8_t miso_pin) {
+  sclk = sclk_pin;
+  cs = cs_pin;
+  miso = miso_pin;
 
   //define pin modes
   pinMode(cs, OUTPUT);
