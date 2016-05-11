@@ -39,7 +39,8 @@ double Adafruit_MAX6675::readCelsius(void) {
   uint16_t v;
 
   digitalWrite(cs, LOW);
-  _delay_ms(1);
+  delay(1);
+  
 
   v = spiread();
   v <<= 8;
@@ -59,25 +60,25 @@ double Adafruit_MAX6675::readCelsius(void) {
 }
 
 
-double Adafruit_MAX6675::readFarenheit(void) {
+double Adafruit_MAX6675::readFahrenheit(void) {
 return readCelsius() * 9.0/5.0 + 32;
 }
 
-byte Adafruit_MAX6675::spiread32(void) {
+byte Adafruit_MAX6675::spiread(void) {
   int i;
   byte d = 0;
 
   for (i=7; i>=0; i--)
   {
     digitalWrite(sclk, LOW);
-    _delay_ms(1);
+    delay(1);
     if (digitalRead(miso)) {
       //set the bit to 0 no matter what
       d |= (1 << i);
     }
 
     digitalWrite(sclk, HIGH);
-    _delay_ms(1);
+    delay(1);
   }
 
   return d;
